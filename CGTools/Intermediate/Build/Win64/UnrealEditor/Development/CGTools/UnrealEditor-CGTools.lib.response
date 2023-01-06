@@ -1,0 +1,12 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-CGTools.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"E:\data\UE\UE5\CGTool\Intermediate\Build\Win64\CGToolEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"E:\data\UE\UE5\CGTool\Plugins\CGTools\Intermediate\Build\Win64\UnrealEditor\Development\CGTools\CGTools.cpp.obj"
+"E:\data\UE\UE5\CGTool\Plugins\CGTools\Intermediate\Build\Win64\UnrealEditor\Development\CGTools\Default.rc2.res"
+/OUT:"E:\data\UE\UE5\CGTool\Plugins\CGTools\Intermediate\Build\Win64\UnrealEditor\Development\CGTools\UnrealEditor-CGTools.lib"

@@ -1,0 +1,14 @@
+{
+    "Version": "1.1",
+    "Data": {
+        "Source": "e:\\data\\ue\\ue5\\cgtool\\plugins\\cgtools\\source\\cgtools\\private\\cgtools.cpp",
+        "ProvidedModule": "",
+        "PCH": "e:\\data\\ue\\ue5\\cgtool\\intermediate\\build\\win64\\cgtooleditor\\development\\engine\\sharedpch.engine.shadowerrors.h.pch",
+        "Includes": [
+            "e:\\data\\ue\\ue5\\cgtool\\plugins\\cgtools\\intermediate\\build\\win64\\unrealeditor\\development\\cgtools\\definitions.cgtools.h",
+            "e:\\data\\ue\\ue5\\cgtool\\plugins\\cgtools\\source\\cgtools\\public\\cgtools.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
