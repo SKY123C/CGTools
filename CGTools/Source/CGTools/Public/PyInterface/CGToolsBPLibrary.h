@@ -25,8 +25,14 @@
 UCLASS()
 class UCGToolsBPLibrary : public UBlueprintFunctionLibrary
 {
-	GENERATED_UCLASS_BODY()
+	GENERATED_BODY()
 
+public:
 	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Execute Sample function", Keywords = "CGTools sample test testing"), Category = "CGToolsTesting")
-	static float CGToolsSampleFunction(float Param);
+	static void CGToolsSampleFunction(FString Param);
+
+	UFUNCTION(BlueprintCallable, Category = "Editor Scripting | Level Utility", meta = (DeprecatedFunction, DeprecationMessage = "The Editor Scripting Utilities Plugin is deprecated - Use the function in Editor Actor Utilities Subsystem"))
+	static int test(const FString& Param);
+
+	
 };

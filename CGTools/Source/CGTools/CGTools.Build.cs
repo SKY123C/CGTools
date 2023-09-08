@@ -38,6 +38,8 @@ public class CGTools : ModuleRules
 				"Engine",
 				"Slate",
 				"SlateCore",
+                "ToolMenus",
+                "Projects"
 				// ... add private dependencies that you statically link with here ...	
 			}
 			);

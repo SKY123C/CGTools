@@ -1,16 +1,22 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
 #include "PyInterface/CGToolsBPLibrary.h"
+#include "Misc/Parse.h"
 #include "CGTools.h"
 
-UCGToolsBPLibrary::UCGToolsBPLibrary(const FObjectInitializer& ObjectInitializer)
-: Super(ObjectInitializer)
-{
+#define LOCTEXT_NAMESPACE "CGToolBPLirary"
 
+void UCGToolsBPLibrary::CGToolsSampleFunction(FString Param)
+{
+	uint32 test = FParse::HexNumber(*Param);
+	int a = 5;
 }
 
-float UCGToolsBPLibrary::CGToolsSampleFunction(float Param)
+int UCGToolsBPLibrary::test(const FString& Param)
 {
-	return -1;
+	uint32 test = FParse::HexNumber(*Param);
+	FString::ToHexBlob()
+	return a*5;
 }
 
+#undef LOCTEXT_NAMESPACE
