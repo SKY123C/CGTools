@@ -17,7 +17,17 @@
 	"Modules": [
 		{
 			"Name": "CGTools",
-			"Type": "Runtime",
+			"Type": "Editor",
+			"LoadingPhase": "PostEngineInit"
+		},
+		{
+			"Name": "CameraLink",
+			"Type": "Editor",
+			"LoadingPhase": "PostEngineInit"
+		},
+		{
+			"Name": "CheckTool",
+			"Type": "Editor",
 			"LoadingPhase": "PreLoadingScreen"
 		}
 	]

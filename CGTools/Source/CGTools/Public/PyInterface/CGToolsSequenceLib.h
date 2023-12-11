@@ -3,7 +3,9 @@
 #pragma once
 
 #include "Kismet/BlueprintFunctionLibrary.h"
-#include "CGToolsBPLibrary.generated.h"
+#include "CineCameraActor.h"
+#include "ISequencerModule.h"
+#include "CGToolsSequenceLib.generated.h"
 
 /* 
 *	Function library class.
@@ -22,13 +24,30 @@
 *	For more info on custom blueprint nodes visit documentation:
 *	https://wiki.unrealengine.com/Custom_Blueprint_Node_Creation
 */
+DECLARE_DYNAMIC_DELEGATE_OneParam(FSequenceToolbarDelegate, ULevelSequence*, Sequence);
+
 UCLASS()
-class CGTOOLS_API UCGToolsBPLibrary : public UBlueprintFunctionLibrary
+class UCGToolsSequenceLib : public UBlueprintFunctionLibrary
 {
-	GENERATED_BODY()
+	GENERATED_UCLASS_BODY()
 
 public:
-	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Execute Sample function", Keywords = "CGTools sample test testing"), Category = "CGToolsTesting")
-	static void CGToolsSampleFunction(FString Param);
-	
+	UFUNCTION(BlueprintCallable, meta = (DisplayName = "RegisterSequenceToolbar", Keywords = "RegisterSequenceToolbar"), Category = "CGTools")
+	static void RegisterSequenceToolbar(const FSequenceToolbarDelegate& ToolbarDelegate);
+
+	UFUNCTION(BlueprintCallable, meta = (DisplayName = "CGTool GetBoundObjects", Keywords = "CGTool GetBoundObjects"), Category = "CGTools")
+	static TArray<UObject*> GetBoundObjects(ULevelSequence* Sequence, const FGuid& Id);
+
+	UFUNCTION(BlueprintCallable, meta = (DisplayName = "CGTool UpdateSequence", Keywords = "CGTool UpdateSequence"), Category = "CGTools")
+	static void UpdateSequence(ULevelSequence* Sequence);
+
+	UFUNCTION(BlueprintCallable, meta = (DisplayName = "CGTool CheckIsOpen", Keywords = "CGTool CheckIsOpen"), Category = "CGTools")
+	static bool CheckIsOpen(ULevelSequence* Sequence);
+
+public:
+	static TWeakPtr<ISequencer> SequencerPtr;
+	static TWeakPtr<ISequencer> GetSequencer() {
+		return SequencerPtr;
+	}
+	static void Execute(const FSequenceToolbarDelegate& ToolbarDelegate);
 };

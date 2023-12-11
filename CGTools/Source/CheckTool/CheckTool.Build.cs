@@ -2,9 +2,9 @@
 
 using UnrealBuildTool;
 
-public class CGTools : ModuleRules
+public class CheckTool : ModuleRules
 {
-	public CGTools(ReadOnlyTargetRules Target) : base(Target)
+	public CheckTool(ReadOnlyTargetRules Target) : base(Target)
 	{
 		PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;
 		
@@ -44,11 +44,6 @@ public class CGTools : ModuleRules
                 "CinematicCamera",
                 "ImageWrapper",
                 "CameraCalibrationCore",
-				"CheckTool",
-				"Sequencer",
-				"LevelSequence",
-				"EditorStyle",
-                "MovieScene",
 				// ... add private dependencies that you statically link with here ...	
 			}
 			);

@@ -4,6 +4,7 @@
 
 #include "Modules/ModuleManager.h"
 #include "Misc/MessageDialog.h"
+#include "ISequencer.h"
 
 class FCGToolsModule : public IModuleInterface
 {
@@ -15,18 +16,24 @@ public:
 
 
 public:
-	TSharedPtr<class FUICommandList> PluginCommandList;
-
+	TSharedPtr<FUICommandList> PluginCommandList;
+	FDelegateHandle OnSequencerCreatedHandle;
 
 public:
-	void CommandAAction()
-	{
-		FMessageDialog::Open(EAppMsgType::Ok, FText::FromString("Execute CommandA"));
-	}
+	void OnSpawnPluginTab(const FSpawnTabArgs& SpawnTabArgs);
+	void CommandAAction(){};
+	FName GetStyleSetName(){return FName("CGToolStyle");};
+
 private:
 	void BindGlobalLevelEditorCommands();
 	void RegisterSlateStyle();
+	TSharedPtr<class FUICommandList> SequenceCommandList;
 
+public:
+	TSharedPtr<FUICommandList> GetSequenceCommand()
+	{
+		return SequenceCommandList;
+	};
 private:
 	TSharedPtr<class FSlateStyleSet> Style;
 

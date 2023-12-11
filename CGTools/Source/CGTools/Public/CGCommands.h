@@ -9,8 +9,15 @@ public:
 	FCGCommands();
 	virtual void RegisterCommands() override;
 
-
 public:
 	TSharedPtr< FUICommandInfo > OpenCGToolsCommand;
-	
+};
+
+class CGTOOLS_API FSequenceCommands : public TCommands<FSequenceCommands>
+{
+public:
+	FSequenceCommands();
+	virtual void RegisterCommands() override;
+public:
+	TSharedPtr< FUICommandInfo > UpdateTWCommand;
 };
