@@ -149,7 +149,7 @@ class TWInterface:
                 component.set_ortho_far_clip_plane(camera_attr_obj.FarPlane.Get())
                 component.set_ortho_width(camera_attr_obj.OrthoZoom.Get())
                 component.set_field_of_view(FieldOfView)
-                if unreal.SystemLibrary.get_engine_version().startswith("4.27"):
+                if unreal.SystemLibrary.get_engine_version().startswith(("4.27", "5")):
                     component.filmback.sensor_width = 36.0
                     component.filmback.sensor_height = 20.25
                     component.focus_settings.focus_method = unreal.CameraFocusMethod.DISABLE
@@ -181,7 +181,6 @@ class TWInterface:
     
     @classmethod
     def import_camera_fbx(cls, cameraPath, sequence):
-        tw_utl.
         engine_version = unreal.SystemLibrary.get_engine_version() #str
         if engine_version.startswith('4.21'):
             import_setting = unreal.MovieSceneUserImportFBXSettings()
